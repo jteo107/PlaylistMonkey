@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodLister Playlist Sorting</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #2d2d2d 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+    </style>
+    <body>
+        <div class = "container">
+            <p>Welcome to SpotGalaxy!</p>
+            <p> Just like our universe, your music taste is made up of a huge collection of stars, each of them chosen
+                and loved by you. But sometimes, when your universe grows far beyond its old limits, some of these stars get lost,
+                and forgotten. With SpotGalaxy, you can use machine learning algorithms to group your favorite songs
+                into star clusters based on similar attributes like popularity score, age, and runtime, so you can rediscover all of your different music vibes.
+                Note: The more clusters you make, the more accurate the groupings are, so choose wisely!
+            </p>
+            <p>To get started, please enter the number of clusters you would like to create(min. 5):</p>
+            <form action="{{ url_for('perform_moodlister') }}" method="POST">
+                <label for="num_playlists">Number of Cluster:</label>
+                <input type="number" id="num_playlists" name="num_playlists" min="5" value="5">
+                <button type="submit">Create Playlists</button>
+            </form>
+            </p>
+            <p>
+                <strong>DISCLAIMER:</strong> MoodLister does not use your data or Spotify data to train 
+                any generalized AI/ML models or save any data for any purpose.
+            </p>
+        </div>
+    </body>
+</html>
